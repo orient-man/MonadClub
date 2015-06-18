@@ -4,7 +4,7 @@ using Xunit;
 
 namespace Monads
 {
-    public class TaskExtensionsTests
+    public class TaskMonadTests
     {
         [Fact]
         public void composition_with_linq_monad()

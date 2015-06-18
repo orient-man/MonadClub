@@ -62,8 +62,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TaskExtensionsTests.cs" />
-    <Compile Include="TaskExtensions.cs" />
+    <Compile Include="TaskMonadTests.cs" />
+    <Compile Include="TaskMonad.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
