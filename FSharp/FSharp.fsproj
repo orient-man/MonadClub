@@ -45,6 +45,7 @@
     <None Include="OptionMonad.fsx" />
     <Compile Include="Rop.fs" />
     <None Include="Rop.fsx" />
+    <None Include="Async.fsx" />
   </ItemGroup>
   <PropertyGroup>
     <MinimumVisualStudioVersion Condition="'$(MinimumVisualStudioVersion)' == ''">11</MinimumVisualStudioVersion>
