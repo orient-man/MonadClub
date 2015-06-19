@@ -44,19 +44,19 @@ namespace Monads
             r.Should().Be(24);
         }
 
-        private static async Task<int> Compute5()
+        private static Task<int> Compute5()
         {
-            return await 5.ToTask();
+            return 5.ToTask();
         }
 
-        private static async Task<int> Compute7()
+        private static Task<int> Compute7()
         {
-            return await 7.ToTask();
+            return 7.ToTask();
         }
 
-        private static async Task<int> Add(int x, int y)
+        private static Task<int> Add(int x, int y)
         {
-            return await (x + y).ToTask();
+            return (x + y).ToTask();
         }
     }
 }
