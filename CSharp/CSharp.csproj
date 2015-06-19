@@ -70,12 +70,23 @@
     <Compile Include="OptionMonadTests.cs" />
     <Compile Include="ParserMonad.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SimpleParser\MiniMLParsers.cs" />
+    <Compile Include="SimpleParser\MiniMLParserTests.cs" />
+    <Compile Include="SimpleParser\Parser.cs" />
+    <Compile Include="SimpleParser\ParserCombinatorExtensions.cs" />
+    <Compile Include="SimpleParser\ParserCombinatorsMonad.cs" />
+    <Compile Include="SimpleParser\Parsers.cs" />
+    <Compile Include="SimpleParser\Result.cs" />
+    <Compile Include="SimpleParser\CharParsers.cs" />
     <Compile Include="TaskMonadTests.cs" />
     <Compile Include="TaskMonad.cs" />
     <Compile Include="XmlParser.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SimpleParser\Info.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
