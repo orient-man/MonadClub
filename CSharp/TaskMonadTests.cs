@@ -19,7 +19,7 @@ namespace Monads
         }
 
         [Fact]
-        public void composition_with_callbacks()
+        public void composition_with_callbacks_simplified_version()
         {
             var r =
                 Compute5()
