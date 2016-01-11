@@ -6,6 +6,21 @@ namespace Monads
 {
     public class TaskMonadTests
     {
+        private static Task<int> Compute5()
+        {
+            return 5.ToTask();
+        }
+
+        private static Task<int> Compute7()
+        {
+            return 7.ToTask();
+        }
+
+        private static Task<int> Add(int x, int y)
+        {
+            return (x + y).ToTask();
+        }
+
         [Fact]
         public void composition_with_linq_monad()
         {
@@ -42,21 +57,6 @@ namespace Monads
             var c = await Add(a, b);
             var r = c * 2;
             r.Should().Be(24);
-        }
-
-        private static Task<int> Compute5()
-        {
-            return 5.ToTask();
-        }
-
-        private static Task<int> Compute7()
-        {
-            return 7.ToTask();
-        }
-
-        private static Task<int> Add(int x, int y)
-        {
-            return (x + y).ToTask();
         }
     }
 }

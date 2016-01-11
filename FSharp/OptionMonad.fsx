@@ -6,6 +6,7 @@ let tryParse value =
     | (true, result) -> Some(result)
     | _ -> None
 
+// nie trzeba - jest już w bib. standardowej
 //module Option
 //    let bind f = function
 //       | None -> None
@@ -30,6 +31,21 @@ divideByWorkflow "bla bla" "5"
 divideByWorkflow "10" "foo"
 divideByWorkflow "0" "5"
 divideByWorkflow "10" "0"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 let (>>=) m f = Option.bind f m
 let (<!>) m f = Option.map f m

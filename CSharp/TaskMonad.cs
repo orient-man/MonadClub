@@ -12,7 +12,7 @@ namespace Monads
 
         public static Task<B> Bind<A, B>(this Task<A> ma, Func<A, Task<B>> func)
         {
-            return ma.ContinueWith(prev => func(prev.Result)).Unwrap();
+            throw new NotImplementedException();
         }
 
         public static Task<C> SelectMany<A, B, C>(
@@ -20,7 +20,7 @@ namespace Monads
             Func<A, Task<B>> f,
             Func<A, B, C> select)
         {
-            return ma.Bind(a => f(a).Bind(b => select(a, b).ToTask()));
+            throw new NotImplementedException();
         }
     }
 }

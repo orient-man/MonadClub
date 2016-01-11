@@ -14,6 +14,25 @@ let compute = async {
 
 Async.RunSynchronously compute
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 let downloadUrl(url : string) = async {
     let request = HttpWebRequest.Create(url)
     use! response = request.AsyncGetResponse()
@@ -21,6 +40,20 @@ let downloadUrl(url : string) = async {
     use reader = new StreamReader(stream)
     return! reader.ReadToEndAsync() |> Async.AwaitTask
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 let downloadUrl_debunked(url : string) = 
     async.Delay(fun () ->

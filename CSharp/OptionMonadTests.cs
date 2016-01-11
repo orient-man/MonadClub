@@ -36,11 +36,6 @@ namespace Monads
                 }
             }
 
-//            var r = from a in TryParse(astring)
-//                from b in TryParse(bstring)
-//                from c in SafeDiv(a, b)
-//                select c * 2;
-
             int value;
             r.MatchSome(out value).Should().Be(hasValue);
             value.Should().Be(expectedValue);
