@@ -41,8 +41,6 @@ namespace Monads
 //                from c in SafeDiv(a, b)
 //                select c * 2;
 
-            // wariant C# 5?
-
             int value;
             r.MatchSome(out value).Should().Be(hasValue);
             value.Should().Be(expectedValue);
