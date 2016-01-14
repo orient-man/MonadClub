@@ -17,10 +17,31 @@ namespace Monads
             bool hasValue,
             int expectedValue = 0)
         {
-            var r = from a in TryParse(astring)
-                from b in TryParse(bstring)
-                from c in SafeDiv(a, b)
-                select c * 2;
+            // r = (a / b) * 2
+            var r = Option.None<int>();
+            var ma = TryParse(astring);
+            int a;
+            if (ma.MatchSome(out a))
+            {
+                var mb = TryParse(bstring);
+                int b;
+                if (mb.MatchSome(out b))
+                {
+                    var mc = SafeDiv(a, b);
+                    int c;
+                    if (mc.MatchSome(out c))
+                    {
+                        r = Option.Some(c * 2);
+                    }
+                }
+            }
+
+//            var r = from a in TryParse(astring)
+//                from b in TryParse(bstring)
+//                from c in SafeDiv(a, b)
+//                select c * 2;
+
+            // wariant C# 5?
 
             int value;
             r.MatchSome(out value).Should().Be(hasValue);
