@@ -16,3 +16,31 @@ tryParse "10" <!> (*) 2 >>= safeDiv 100
 //tryParse "10" |> map ((*) 2) >>= safeDiv 100
 //tryParse "10" |> map ((*) 2) |> bind (safeDiv 100)
 tryParse "0x" <!> (*) 2 >>= safeDiv 100
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+let either = EitherBuilder ()
+
+// r = (a / b) * 2
+let calculate astring bstring = either {
+    let! a = tryParse astring
+    let! b = tryParse bstring
+    let! c = safeDiv a b
+    return c * 2
+}
+
+calculate "10" "5"
+calculate "10" "0"
+calculate "bla bla" "5"
