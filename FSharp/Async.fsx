@@ -63,3 +63,6 @@ let downloadUrl_debunked(url : string) =
                 let stream = response.GetResponseStream()
                 async.Using(new StreamReader(stream), fun reader ->
                     reader.ReadToEndAsync() |> Async.AwaitTask))))
+
+// BONUS: "Async in C# and F#: Asynchronous gotchas in C#"
+// http://tomasp.net/blog/csharp-async-gotchas.aspx/
