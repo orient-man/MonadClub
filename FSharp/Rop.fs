@@ -6,19 +6,14 @@ type Result<'TSuccess, 'TFailure> =
     | Success of 'TSuccess
     | Failure of 'TFailure
 
-let bind switchFunction twoTrackInput =
-    match twoTrackInput with
-    | Success s -> switchFunction s
-    | Failure f -> Failure f
+let bind f m =
+    match m with Success x -> f x | _ -> m
 
-let map oneTrackFunction twoTrackInput =
-    match twoTrackInput with
-    | Success s -> Success (oneTrackFunction s)
-    | Failure f -> Failure f
+let map f m =
+    match m with Success x -> Success (f x) | _ -> m
 
 // 1)
-let (>>=) twoTrackInput switchFunction =
-    bind switchFunction twoTrackInput
+let (>>=) m f = bind f m
 
 let (<!>) m f = map f m
 
